@@ -15,7 +15,7 @@
                         <div>
                             <x-input-label for="image" :value="__('Image')" />
                             <x-file-input id="image" class="block mt-1 w-full" type="file" name="image" :value="old('image')" required autofocus autocomplete="Upload an Image." />
-                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('image')" class ="mt-2" />
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
