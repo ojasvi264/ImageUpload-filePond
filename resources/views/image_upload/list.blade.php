@@ -23,12 +23,10 @@
                         </thead>
                         <tbody>
                             @foreach($imageList as $index => $image)
-{{--                                @dd(asset($image->image))--}}
                                 <tr>
                                     <td>{{ ++$index }}</td>
-{{--                                    <td>{{ $image->image }}</td>--}}
                                     <td>
-                                        <img src="{{asset($image->image)}}" alt="" height="100px" width="100px">
+                                        <img src="{{asset($image->photo)}}" alt="" height="100px" width="100px">
                                     </td>
                                 </tr>
                             @endforeach
