@@ -11,7 +11,7 @@ class Image extends Model implements HasMedia
     use InteractsWithMedia;
     protected $fillable = ['image'];
 
-    public function getImageAttribute(){
+    public function getPhotoAttribute(){
         return $this->getMedia()->first()?->getFullUrl();
     }
 }
