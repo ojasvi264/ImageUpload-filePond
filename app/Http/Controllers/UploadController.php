@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 
 class UploadController extends Controller
 {
-    public function store(Request $request){
-        if($request->hasFile('image')){
-            $file = $request->file('image');
+    public function store(Request $request)
+    {
+        $file = $request->file('image') ?? ($request->hasFile('images') ? $request->images[0] : null);
+
+        if ($file) {
             $filename = $file->getClientOriginalName();
-            $folder = uniqid(). '-' . now()->timestamp;
+            $folder = uniqid() . '-' . now()->timestamp;
             $file->storeAs('images/tmp/' . $folder, $filename);
+
             TemporaryFile::create([
                 'folder' => $folder,
                 'filename' => $filename,
@@ -20,6 +23,7 @@ class UploadController extends Controller
 
             return $folder;
         }
+
         return '';
     }
 
