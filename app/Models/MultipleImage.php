@@ -10,4 +10,8 @@ class MultipleImage extends Model implements HasMedia
 {
     use InteractsWithMedia;
     protected $fillable = ['photo'];
+
+    public function getPhotoAttribute(){
+        return $this->getMedia()->first()?->getFullUrl();
+    }
 }
