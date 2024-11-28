@@ -27,7 +27,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($imageList as $index => $image)
+                            @foreach($multipleImageList as $index => $image)
                                 <tr>
                                     <td>{{ ++$index }}</td>
                                     <td>
