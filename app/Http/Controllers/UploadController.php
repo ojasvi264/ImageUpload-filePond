@@ -22,4 +22,26 @@ class UploadController extends Controller
         }
         return '';
     }
+
+    public function destroy(Request $request)
+    {
+        $imageFolder = $request->getContent();
+        $directoryPath = storage_path('app/public/images/tmp/' . $imageFolder);
+        if (is_dir($directoryPath)) {
+            foreach (glob($directoryPath . '/*') as $file) {
+                if (is_file($file)) {
+                    unlink($file); // Delete the file
+                }
+            }
+            rmdir($directoryPath);
+        }
+
+        $temporaryFile = TemporaryFile::where('folder', $imageFolder)->first();
+        if ($temporaryFile) {
+            $temporaryFile->delete();
+        }
+
+        return response()->json(['success' => true, 'message' => 'Folder and associated record deleted successfully.']);
+    }
+
 }
