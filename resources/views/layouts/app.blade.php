@@ -11,6 +11,8 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+        <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet" />
+        <link href="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css" rel="stylesheet" />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -34,6 +36,11 @@
             </main>
         </div>
         <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.js"></script>
+        <script src="https://cdn.pqina.nl/pintura/pintura.min.js"></script>
+        <script src="https://cdn.pqina.nl/filepond-plugin-image-edit/filepond-plugin-image-edit.min.js"></script>
         @yield('scripts');
     </body>
 </html>
