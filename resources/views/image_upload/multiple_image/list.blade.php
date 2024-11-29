@@ -12,7 +12,7 @@
             </div>
         @endif
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <a href="{{ route('image.create') }}">
+            <a href="{{ route('multiple_image.create') }}">
                 <x-primary-button class="ms-3 float-right">
                     {{ __('Create') }}
                 </x-primary-button>
@@ -31,7 +31,7 @@
                                 <tr>
                                     <td>{{ ++$index }}</td>
                                     <td>
-                                        <img src="{{asset($image->photo)}}" alt="" height="100px" width="100px">
+                                        <img src="{{asset($image->album)}}" alt="" height="100px" width="100px">
                                     </td>
                                 </tr>
                             @endforeach

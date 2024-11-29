@@ -27,7 +27,7 @@ class MultipleImageUploadController extends Controller
             $temporaryFile = TemporaryFile::where('folder', $image)->first();
             if ($temporaryFile){
                 $filePath = storage_path('app/public/images/tmp/' . $image . '/' . $temporaryFile->filename);
-                $media = $imageStore->addMedia($filePath)->toMediaCollection();
+                $media = $imageStore->addMedia($filePath)->toMediaCollection('album');
 
                 if ($media) {
                     rmdir(storage_path('app/public/images/tmp/' . $image));
