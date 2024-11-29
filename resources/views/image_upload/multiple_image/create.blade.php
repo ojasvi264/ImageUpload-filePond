@@ -13,7 +13,7 @@
                         @csrf
                         <!-- Multiple Image Upload -->
                         <div>
-                            <x-input-label for="image" :value="__('Images')" />
+                            <x-input-label for="image" :value="__('Upload Multiple Images')" />
                             <input id="image" class="filepond" type="file" name="images[]" multiple />
                             <x-input-error :messages="$errors->get('images')" class="mt-2" />
                         </div>
