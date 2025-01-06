@@ -1,4 +1,5 @@
 # Image upload library(filePond) integration
+This is a implementation of filePond library for uploading images. Here I have used laravel with blade templates.
 1. Single Image
 2. Multiple Images
 
