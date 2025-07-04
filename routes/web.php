@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/image/create', [ImageUploadController::class, 'create'])->name('image.create');
 Route::get('/image/list', [ImageUploadController::class, 'list'])->name('image.list');
 Route::post('/image/store', [ImageUploadController::class, 'store'])->name('image.store');
+Route::delete('/image/{image}/destroy', [ImageUploadController::class, 'destroy'])->name('image.destroy');
 
 Route::get('/multiple-image/create', [MultipleImageUploadController::class, 'create'])->name('multiple_image.create');
 Route::get('/multiple-image/list', [MultipleImageUploadController::class, 'list'])->name('multiple_image.list');
