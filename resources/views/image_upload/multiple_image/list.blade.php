@@ -55,13 +55,13 @@
                                 <tr class="border-t">
                                     <td>{{ ++$index }}</td>
                                     <td class="px-4 py-2 border">
-                                        @if(count($image) > 0)
+                                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                             @foreach($image as $img)
-                                               <img src="{{asset($img->album)}}" alt="" height="100px" width="100px"></br>
+                                                <div>
+                                                    <img src="{{ asset($img->album) }}" alt="" class="w-32 h-32 object-cover rounded">
+                                                </div>
                                             @endforeach
-                                        @else 
-                                            <img src="{{asset($img->album)}}" alt="" height="100px" width="100px">
-                                        @endif
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
