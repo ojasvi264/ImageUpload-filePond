@@ -39,4 +39,14 @@ class ImageUploadController extends Controller
         }
         return redirect()->route('image.list')->with('success', "Image Stored Successfully.");
     }
+
+    public function destroy(Request $request, Image $image){
+        if ($image->delete()) {
+            // Optionally, you can also delete the media associated with the image
+            $image->clearMediaCollection();
+            return redirect()->route('image.list')->with('success', "Image Deleted Successfully.");
+        } else {
+            return redirect()->route('image.list')->with('error', "Failed to delete image.");
+        }
+    }
 }
