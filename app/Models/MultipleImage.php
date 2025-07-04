@@ -10,6 +10,7 @@ class MultipleImage extends Model implements HasMedia
 {
     use InteractsWithMedia;
     protected $fillable = ['photo'];
+    public $timestamps = true;
 
     public function getAlbumAttribute(){
         return $this->getMedia('album')->first()?->getFullUrl();
