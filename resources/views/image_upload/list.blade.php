@@ -33,9 +33,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-end mb-4">
                 <a href="{{ route('image.create') }}">
-                    <x-primary-button>
+                    <x-default-button>
                         {{ __('Create') }}
-                    </x-primary-button>
+                    </x-default-button>
                 </a>
             </div>
            
