@@ -15,6 +15,12 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('image.create')" :active="request()->routeIs('image.*')">
+                        {{ __('Image Upload') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('multiple_image.create')" :active="request()->routeIs('multiple_image.*')">
+                        {{ __('Multiple Image Upload') }}
+                    </x-nav-link>
                 </div>
             </div>
 
