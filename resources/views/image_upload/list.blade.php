@@ -31,29 +31,32 @@
             </div>
         @endif
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <a href="{{ route('image.create') }}">
-                <x-primary-button class="ms-3 float-right">
-                    {{ __('Create') }}
-                </x-primary-button>
-            </a>
+            <div class="flex justify-end mb-4">
+                <a href="{{ route('image.create') }}">
+                    <x-primary-button>
+                        {{ __('Create') }}
+                    </x-primary-button>
+                </a>
+            </div>
+           
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <table class="table table-bordered">
-                        <thead>
+                    <table class="w-full table-auto border border-gray-300 dark:border-gray-700">
+                        <thead class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
                             <tr>
-                                <th>S.N</th>
-                                <th>Image</th>
-                                <th>Action</th>
+                                <th class="px-4 py-2 border">S.N</th>
+                                <th class="px-4 py-2 border">Image</th>
+                                <th class="px-4 py-2 border">Action</th>
                             </tr>
                         </thead>
                         <tbody class="text-center">
                             @foreach($imageList as $index => $image)
-                                <tr>
-                                    <td>{{ ++$index }}</td>
-                                    <td>
-                                        <img src="{{asset($image->photo)}}" alt="Image" class="img-thumbnail" style="width: 100px; height: 100px;">
+                                <tr class="border-t">
+                                    <td class="px-4 py-2 border">{{ ++$index }}</td>
+                                    <td class="px-4 py-2 border">
+                                        <img src="{{ asset($image->photo) }}" alt="Image" class="w-24 h-24 object-cover rounded-md mx-auto">
                                     </td>
-                                    <td>
+                                    <td class="px-4 py-2 border">
                                         <form action="{{ route('image.destroy', $image) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
