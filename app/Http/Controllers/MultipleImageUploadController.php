@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 class MultipleImageUploadController extends Controller
 {
     public function list(){
-        $multipleImageList = MultipleImage::latest()->get();
+        $multipleImageList = MultipleImage::latest()->get()->groupBy('created_at');
         return view('image_upload.multiple_image.list', compact('multipleImageList'));
     }
 
