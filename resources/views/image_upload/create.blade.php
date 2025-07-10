@@ -37,7 +37,6 @@
     </div>
     @section('scripts')
         <script>
-            // Get a reference to the file input element
             const inputElement = document.querySelector('input[id="image"]');
 
             // Create a FilePond instance
